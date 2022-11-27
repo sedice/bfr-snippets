@@ -1,0 +1,33 @@
+{
+  "name": "bfr-snippets",
+  "displayName": "bfr-snippets",
+  "description": "",
+  "icon": "images/code.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdras/vue-vscode-snippets.git"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "vue": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "vue": "vue",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
