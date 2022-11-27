@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sdras/vue-vscode-snippets.git"
+    "url": "https://github.com/sedice/bfr-snippets.git"
   },
   "categories": [
     "Snippets"
@@ -21,11 +21,11 @@
         "path": "./snippets/snippets.code-snippets"
       },
       {
-        "vue": "javascript",
+        "language": "typescript",
         "path": "./snippets/snippets.code-snippets"
       },
       {
-        "vue": "vue",
+        "language": "vue",
         "path": "./snippets/snippets.code-snippets"
       }
     ]

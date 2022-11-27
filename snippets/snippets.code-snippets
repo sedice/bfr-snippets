@@ -1,1 +1,129 @@
-{}
+{
+    "init vue3": {
+      "prefix": "binit",
+      "body": [
+        "<template>",
+        "  <div></div>",
+        "</template>",
+        "",
+        "<script lang=\"tsx\">",
+        "  export default {",
+        "    name: '${1:$TM_FILENAME_BASE}',",
+        "  };",
+        "</script>",
+        "",
+        "<script setup lang=\"tsx\"></script>"
+      ],
+      "description": "init vue3"
+    },
+    "useDel": {
+      "prefix": "bdel",
+      "body": [
+        "  const useDel = useRequest(${1:ServerName}, {",
+        "    manual: true,",
+        "    onSuccess() {",
+        "      message.success('删除成功!');",
+        "      useList.runPro();",
+        "    },",
+        "  });"
+      ],
+      "description": "useDel"
+    },
+    "usePut": {
+      "prefix": "bput",
+      "body": [
+        "  const usePut = useRequest(${1:ServerName}, {",
+        "    manual: true,",
+        "    onSuccess() {",
+        "      message.success('修改成功!');",
+        "      useList.runPro();",
+        "    },",
+        "  });"
+      ],
+      "description": "usePut"
+    },
+    "usePost": {
+      "prefix": "bpost",
+      "body": [
+        "  const useDel = useRequest(${1:ServerName}, {",
+        "    manual: true,",
+        "    onSuccess() {",
+        "      message.success('新增成功!');",
+        "      useList.runPro();",
+        "    },",
+        "  });"
+      ],
+      "description": "usePost"
+    },
+    "useList": {
+      "prefix": "blist",
+      "body": [
+        "  const conditions = shallowReactive({",
+        "  });",
+        "  const useList = reactive(",
+        "    usePaginationPro(${1:ServerName}, {",
+        "      debounceInterval: 200,",
+        "      dep: conditions,",
+        "    }),",
+        "  );",
+        "  const dataSource = computed(() => useList.data?.list?? []);"
+      ],
+      "description": "useList"
+    },
+    "vmodal_outer": {
+      "prefix": "vmodal_outer",
+      "body": ["const [register, { openModal }] = useModal();"],
+      "description": "初始化 useModal"
+    },
+    "bmodal_inner": {
+      "prefix": "bmodal_inner",
+      "body": [
+        "const [register, { closeModal }] = useModalInner((data: RecordType) => {",
+        "  resetFormModel(data);",
+        "  nextTick(() => {",
+        "    formRef.value?.clearValidate();",
+        "  });",
+        "});"
+      ],
+      "description": "初始化 useModalIner"
+    },
+    "bdrawer_outer": {
+      "prefix": "bdrawer_outer",
+      "body": ["const [register, { openDrawer }] = useDrawer();"],
+      "description": "初始化 useDrawer"
+    },
+    "bdrawer_inner": {
+      "prefix": "bdrawer_inner",
+      "body": [
+        "const [register, { closeDrawer }] = useDrawerInner((data: RecordType) => {",
+        "  resetFormModel(data);",
+        "  nextTick(() => {",
+        "    formRef.value?.clearValidate();",
+        "  });",
+        "});"
+      ],
+      "description": "初始化 useDrawerIner"
+    },
+    "bcols": {
+      "prefix": "bcols",
+      "body": [
+        "/**",
+        " * 描述",
+        " */",
+        "export type ${1:ListDemosItem}= ListItemType<GetBasisUsersResponse, 'data'>;",
+        "export const genDemosColumns = (extraCols: TableColumnType<${1:ListDemosItem}>[]) => {",
+        "  const list: TableColumnType<${1:ListDemosItem}>[] = [",
+        "    {",
+        "      title: '工号',",
+        "      dataIndex: 'loginId',",
+        "      width: 150,",
+        "    },",
+        "    ...extraCols,",
+        "  ];",
+        "  return list;",
+        "};"
+      ],
+      "description": "初始化列表信息"
+    }
+  }
+  
